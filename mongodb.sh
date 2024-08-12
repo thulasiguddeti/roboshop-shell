@@ -46,7 +46,7 @@ VALIDATE $? "Start MongoDB"
 
 sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf &>> $LOGFILE
 
-VALIDATE $? "Remote access to MongoDB"
+VALIDATE $? "Remote access to MongoD"
 
 systemctl restart mongod &>> $LOGFILE 
 
