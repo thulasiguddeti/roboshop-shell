@@ -28,6 +28,10 @@ else
     echo "Your are a root user"
 fi # it indicates if condition ends here.
 
-cp mongo.repo /etc/yum.repos.d/mongo.repo &>> LOGFILE
+cp mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
 
 VALIDATE $? "Copied MongoDB Repo"
+
+dnf install mongodb-org -y &>> $LOGFILE
+ 
+VALIDATE $? "Installing MongoDB"
