@@ -54,7 +54,7 @@ VALIDATE $? "Downloding shipping file"
 
 cd /app  &>> $LOGFILE
 
-VALIDATE $? "come back to app directory"
+VALIDATE $? "moving to app directory"
 
 unzip -o /tmp/shipping.zip  &>> $LOGFILE
 
@@ -62,7 +62,7 @@ VALIDATE $? "unzipping the shipping file"
 
 cd /app &>> $LOGFILE
 
-VALIDATE $? "come back to app directory"
+VALIDATE $? "moving to app directory"
 
 mvn clean package &>> $LOGFILE
 
