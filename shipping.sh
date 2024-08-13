@@ -58,7 +58,7 @@ VALIDATE $? "moving to app directory"
 
 unzip -o /tmp/shipping.zip  &>> $LOGFILE
 
-VALIDATE $? "unzipping the shipping file"
+VALIDATE $? "unzipping the shipping "
 
 cd /app &>> $LOGFILE
 
@@ -70,11 +70,11 @@ VALIDATE $? "Installing maven package dependencies"
 
 mv target/shipping-1.0.jar shipping.jar  &>> $LOGFILE
 
-VALIDATE $? "changing shipping-1.0 file with a name of shipping.jar"
+VALIDATE $? "renaming jar file as shipping.jar"
 
 cp /home/centos/roboshop-shell/shipping.service /etc/systemd/system/shipping.service  &>> $LOGFILE
 
-VALIDATE $? "Copying shipping.service file"
+VALIDATE $? "Copying shipping service"
 
 systemctl daemon-reload  &>> $LOGFILE
 
@@ -94,7 +94,7 @@ VALIDATE $? "Installing MySQL client"
 
 mysql -h <MYSQL-SERVER-IPADDRESS> -uroot -pRoboShop@1 < /app/schema/shipping.sql &>> $LOGFILE
 
-VALIDATE $? "Loading data from the mysql client"
+VALIDATE $? "Loading  shipping data from the mysql client"
 
 systemctl restart shipping  &>> $LOGFILE
 
