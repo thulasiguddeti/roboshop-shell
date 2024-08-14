@@ -29,7 +29,7 @@ else
     echo "Your are a root user"
 fi # it indicates if condition ends here.
 
-dnf install maven -y
+dnf install maven -y &>> $LOGFILE
 
 VALIDATE $? "Installing Maven"
 
@@ -92,7 +92,7 @@ dnf install mysql -y  &>> $LOGFILE
 
 VALIDATE $? "Installing MySQL client"
 
-mysql -h <MYSQL-SERVER-IPADDRESS> -uroot -pRoboShop@1 < /app/schema/shipping.sql &>> $LOGFILE
+mysql -h 172.31.39.216 -uroot -pRoboShop@1 < /app/schema/shipping.sql &>> $LOGFILE
 
 VALIDATE $? "Loading  shipping data from the mysql client"
 
