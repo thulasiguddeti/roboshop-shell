@@ -56,6 +56,10 @@ cd /app &>> $LOGFILE
 
 VALIDATE $? "moving to app directory"
 
+unzip -o /tmp/payment.zip &>> $LOGFILE
+
+VALIDATE $? "Unzipping payment file"
+
 pip3.6 install -r requirements.txt  &>> $LOGFILE
 
 VALIDATE $? "Installing Python dependencies"
