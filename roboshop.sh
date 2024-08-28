@@ -13,9 +13,11 @@ do
         INSTANCE_TYPE="t2.micro"
     fi
 
-    aws ec2 run-instances --image-id ami-0b4f379183e5706b9 --instance-type $INSTANCE_TYPE --security-group-ids sg-0eb63e7e007519cec
+    aws ec2 run-instances --image-id ami-0b4f379183e5706b9 --instance-type $INSTANCE_TYPE --security-group-ids sg-0eb63e7e007519cec --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$i}]"
+
 
 done
 
-## aws ec2 run-instances --image-id ami-0b4f379183e5706b9 --count 1 --instance-type t2.micro --security-group-ids sg-0eb63e7e007519cec
+## aws ec2 run-instances --image-id ami-0b4f379183e5706b9 --count 1 --instance-type t2.micro --security-group-ids sg-0eb63e7e007519cec 
+# --tag-specifications 'ResourceType=instance,Tags=[{Key=webserver,Value=production}]'
 
