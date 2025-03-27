@@ -1,4 +1,4 @@
-z#!/bin/bash
+#!/bin/bash
 
 ID=$(id -u)
 R="\e[31m"
